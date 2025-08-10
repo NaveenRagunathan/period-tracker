@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             chatbotInput.value = '';
 
             try {
-                const response = await fetch('/chat', {
+                const response = await fetch('https://period-tracker-5gyr.onrender.com/chat', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
