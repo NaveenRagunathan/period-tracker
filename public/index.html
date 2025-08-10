@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Period Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+
+    <div id="passcode-screen" class="screen active">
+        <h2>Enter Passcode</h2>
+        <input type="password" id="passcode-input" maxlength="4">
+        <p id="passcode-prompt">Set a 4-digit passcode.</p>
+        <div id="passcode-error" class="error"></div>
+    </div>
+
+    <div id="app-screen" class="screen">
+        <header>
+            <h1>Period Tracker</h1>
+        </header>
+
+        <main>
+            <div id="cycle-info-container">
+                <div class="info-box">
+                    <p>Last Period Start</p>
+                    <span id="last-period-start">--</span>
+                </div>
+                <div class="info-box">
+                    <p>Avg. Cycle Length</p>
+                    <span id="avg-cycle-length">--</span>
+                </div>
+                <div class="info-box">
+                    <p>Next Period Est.</p>
+                    <span id="next-period-date">--</span>
+                </div>
+            </div>
+
+            <div id="calendar-container">
+                <div id="calendar-header">
+                    <button id="prev-month">&lt;</button>
+                    <h2 id="month-year"></h2>
+                    <button id="next-month">&gt;</button>
+                </div>
+                <div id="calendar-grid"></div>
+            </div>
+        </main>
+
+        <footer>
+            <button id="open-chatbot-btn">Chat with Bot</button>
+        </footer>
+    </div>
+
+    <div id="chatbot-screen" class="screen">
+        <div id="chatbot-header">
+            <h2>Chatbot</h2>
+            <button id="close-chatbot-btn">Close</button>
+        </div>
+        <div id="chatbot-messages"></div>
+        <div id="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="Ask a question...">
+            <button id="chatbot-send-btn">Send</button>
+        </div>
+    </div>
+
+    <script src="db.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
