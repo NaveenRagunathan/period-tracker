@@ -6,7 +6,7 @@ const { ChatMistralAI } = require('@langchain/mistralai');
 const { HumanMessage } = require('@langchain/core/messages');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -43,5 +43,5 @@ app.post('/chat', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+    console.log(`Server is running on port ${port}`);
 });
